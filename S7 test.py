@@ -1,6 +1,7 @@
 import snap7
 import time
 import keyboard  # Import the keyboard library
+from _thread import start_new_thread
 
 def read_barcode_data(plc, db_number, start_byte, size):
     try:
@@ -49,7 +50,7 @@ def Write_location(plc, location):
         print(f"Error: {e}")
 
         
-plc_ip = '192.168.6.40'  # Replace with your PLC's IP address
+plc_ip = '192.168.6.155'  # Replace with your PLC's IP address
 barcode_db_number = 1  # Replace with the DB number where your barcode data is stored
 barcode_start_byte = 8  # Replace with the start byte position of your barcode data
 barcode_size = 18  # Replace with the size of the barcode data in bytes
